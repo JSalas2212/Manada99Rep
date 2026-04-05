@@ -98,9 +98,12 @@
     });
 
 
-    BABYLON.SceneLoader.ImportMeshAsync("", "https://jsalas2212.github.io/Manada99Rep/", "trono.glb").then((result) => {    
-  
-    });
+    BABYLON.SceneLoader.ImportMeshAsync("", "https://jsalas2212.github.io/Manada99Rep/", "trono.glb")
+	.then((result) => {    
+	    result.meshes.forEach(mesh => {
+	        mesh.scaling = new BABYLON.Vector3(1.0, 1.0, 1.0);
+	    });
+	});
 
 
 
