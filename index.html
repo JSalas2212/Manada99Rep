@@ -93,17 +93,19 @@
 	mat1.bumpTexture = new BABYLON.Texture("https://i.imgur.com/wGyk6os.png", scene);
 
     BABYLON.SceneLoader.ImportMesh("",Assets.meshes.Yeti.rootUrl, Assets.meshes.Yeti.filename, scene, function(newMeshes){
-        newMeshes[0].scaling = new BABYLON.Vector3(0.1, 0.1, 0.1);
-    
+        newMeshes[0].scaling = new BABYLON.Vector3(0.05, 0.05, 0.05);
+        newMeshes[0].position.x += -0.4;
     });
 
 
     BABYLON.SceneLoader.ImportMeshAsync("", "https://jsalas2212.github.io/Manada99Rep/", "trono.glb")
-	.then((result) => {    
-	    result.meshes.forEach(mesh => {
-	        mesh.scaling = new BABYLON.Vector3(1.0, 1.0, 1.0);
-	    });
-	});
+    .then((result) => {    
+        result.meshes.forEach(mesh => {
+            mesh.scaling = new BABYLON.Vector3(0.5, 0.5, 0.5);
+            mesh.position.x += 3.5;
+            mesh.rotation.z = BABYLON.Tools.ToRadians(90);;
+        });
+    });
 
 
 
